@@ -1,0 +1,9 @@
+function [status, msg ] = savesvg(filetoconvert)
+%SAVESVG この関数の概要をここに記述
+%   詳細説明をここに記述
+fileToConvert = 'sq_co_lu_util';
+command = strcat('"inkscape" ', {' '}, '"', fileToConvert,'.svg" --export-pdf="', fileToConvert, '.pdf" --export-pdf-version=1.5 --export-area-drawing');
+command = string(command);
+[ status, msg ] = system(command); % Run command prompt - return variable to suppress output text
+end
+
